@@ -1,0 +1,8 @@
+uploads/
+output/
+assets/diagrams/
+contact_*.png
+*.pyc
+__pycache__/
+.venv/
+venv/

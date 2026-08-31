@@ -1,0 +1,6 @@
+pillow
+numpy
+scipy
+weasyprint
+pikepdf
+pypdf

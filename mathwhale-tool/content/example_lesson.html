@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../scripts/style.css">
+</head>
+<body>
+
+<!-- ===== lesson header (first page only) ===== -->
+<div class="lesson-header">
+  <div class="unit-lines">
+    <div class="unit-line1">UNIT X: Subject</div>
+    <div class="unit-line2">Lesson X&ndash;X: Lesson Title</div>
+  </div>
+</div>
+
+<!-- ===== a "Learn" section with a definition callout ===== -->
+<div class="tag-row">
+  <span class="pill blue">Learn 1</span>
+  <span class="title">Section Title</span>
+</div>
+<p>Body text goes here. Fractions use nested spans:
+  <span class="frac"><span class="num">AB</span><span class="den">CD</span></span> = k
+</p>
+
+<div class="callout blue">
+  Definition or key-fact box. Use blue / teal / gold / coral as the four
+  accent colors - rotate them by section type, don't mix randomly.
+  <div class="item-row"><span class="num-badge navy">1</span><span class="content">First point</span></div>
+  <div class="item-row"><span class="num-badge navy">2</span><span class="content">Second point</span></div>
+</div>
+
+<!-- centered boxed equation -->
+<div class="center-eq"><span class="box">f(x) = ax + b</span></div>
+
+<!-- a diagram, sized to its true scale from the source photo -->
+<div class="fig-block"><img src="../assets/diagrams/example.png"></div>
+
+<!-- ===== an Example + Solution ===== -->
+<div class="tag-row"><span class="pill teal">Example 1</span></div>
+<p>Example prompt text.</p>
+<div class="tag-row"><span class="pill gold">Solution</span></div>
+<div class="solution-block">
+  <div class="step">&because; reason &there4; conclusion</div>
+  <div class="step">&there4; next step</div>
+</div>
+
+<!-- ===== a two-column grid of short items (uses inline-block, see style.css note) ===== -->
+<div class="two-col">
+  <div class="col"><div class="item-row"><span class="num-badge">1</span><span class="content">f(x) = x&sup2;</span></div></div>
+  <div class="col"><div class="item-row"><span class="num-badge">2</span><span class="content">f(x) = 2x</span></div></div>
+</div>
+
+<!-- ===== MCQ section ===== -->
+<div class="page-break"></div>
+<div class="section-title">1. Multiple Choice Questions</div>
+
+<div class="mcq-item">
+  <div class="mcq-q"><span class="num-badge navy">1</span><span class="qtext">Question text?</span></div>
+  <div class="options">
+    <div class="opt"><span class="letter">A</span>Option A</div>
+    <div class="opt"><span class="letter">B</span>Option B</div>
+    <div class="opt"><span class="letter">C</span>Option C</div>
+    <div class="opt"><span class="letter">D</span>Option D</div>
+  </div>
+  <!-- only if this question has a figure: -->
+  <div class="mcq-fig"><img src="../assets/diagrams/example.png"></div>
+</div>
+
+<!-- ===== Essay section ===== -->
+<div class="page-break"></div>
+<div class="section-title">2. Essay Questions</div>
+
+<div class="essay-item">
+  <div class="tag-row"><span class="pill blue">Question 1</span></div>
+  <div class="essay-q"><span class="qtext">Prove that...</span></div>
+  <div class="essay-fig"><img src="../assets/diagrams/example.png"></div>
+  <div class="answer-box"></div>
+</div>
+
+<!-- a note when a source page was missing from what was uploaded -->
+<div class="gap-note">&mdash; page N was not included in the uploaded pages &mdash;</div>
+
+</body></html>

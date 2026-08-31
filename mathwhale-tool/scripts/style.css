@@ -1,0 +1,187 @@
+@font-face { font-family:'Ghaith'; src: url('../assets/fonts/GHAITHSANS-BLACK.OTF'); }
+@font-face { font-family:'InkFree'; src: url('../assets/fonts/INKFREE.TTF'); }
+
+@page {
+  size: 595.5pt 850.08pt;
+  margin: 76pt 50pt 84pt 45pt;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'InkFree','DejaVu Sans',sans-serif;
+  font-size: 11.3pt;
+  line-height: 1.55;
+  color: #1c2430;
+  margin: 0;
+  padding: 0;
+}
+
+p { margin: 0 0 8pt 0; }
+
+/* ---------- two-column grid ----------
+   NOTE: uses inline-block, not flexbox. WeasyPrint has a
+   reproducible bug where a percentage/flex-basis width on a
+   flex item is dropped (collapses to 100%) depending on the
+   ordering of unrelated flex rules elsewhere in the stylesheet.
+   inline-block is not subject to that bug and is used for every
+   multi-item grid in this document for that reason. */
+.two-col { font-size:0; }
+.two-col .col { display:inline-block; vertical-align:top; width:49%; font-size:11.3pt; padding-right:8pt; }
+.options { margin-left:21pt; font-size:0; }
+.opt { display:inline-block; vertical-align:top; width:49%; font-size:11.3pt; padding-right:6pt; }
+.graph-row { text-align:justify; font-size:0; margin: 10pt 0; }
+.graph-row:after { content:""; display:inline-block; width:100%; }
+.graph-cell { display:inline-block; vertical-align:top; width:31%; font-size:11.3pt; text-align:center; }
+
+
+/* ---------- colour system ---------- */
+:root {
+  --blue: #1A4983;
+  --blue-tint: rgba(26,73,131,0.09);
+  --teal: #13968D;
+  --teal-tint: rgba(19,150,141,0.10);
+  --gold: #DE9A1F;
+  --gold-tint: rgba(222,154,31,0.14);
+  --coral: #E96650;
+  --coral-tint: rgba(233,102,80,0.10);
+}
+
+/* ---------- lesson header ---------- */
+.lesson-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--blue-tint);
+  border-left: 4pt solid var(--blue);
+  border-radius: 8pt;
+  padding: 9pt 14pt;
+  margin-bottom: 16pt;
+}
+.lesson-header .unit-lines {
+  font-family: 'Ghaith','DejaVu Sans',sans-serif;
+  color: var(--blue);
+}
+.lesson-header .unit-lines .unit-line1 { font-size: 12.5pt; }
+.lesson-header .unit-lines .unit-line2 { font-size: 12.5pt; margin-top:2pt; }
+.prep-badge {
+  font-family: 'Ghaith','DejaVu Sans',sans-serif;
+  background: var(--blue);
+  color: #fff;
+  padding: 5pt 14pt;
+  border-radius: 999pt;
+  font-size: 11pt;
+  white-space: nowrap;
+}
+
+/* ---------- section label pills ---------- */
+.tag-row { display:flex; align-items:baseline; gap:9pt; margin: 4pt 0 8pt 0; }
+.pill {
+  font-family:'Ghaith','DejaVu Sans',sans-serif;
+  color:#fff; display:inline-block; padding:4.5pt 13pt;
+  border-radius: 999pt; font-size:11pt; white-space:nowrap;
+}
+.pill.blue{ background:var(--blue); }
+.pill.teal{ background:var(--teal); }
+.pill.gold{ background:var(--gold); }
+.pill.coral{ background:var(--coral); }
+.tag-row .title {
+  font-family:'Ghaith','DejaVu Sans',sans-serif;
+  color:#1c2430; font-size:13.5pt;
+}
+
+/* ---------- callout / notice / note boxes ---------- */
+.callout {
+  border-radius: 8pt;
+  padding: 10pt 14pt;
+  margin: 8pt 0 12pt 0;
+}
+.callout.blue  { background:var(--blue-tint);  border-left:4pt solid var(--blue); }
+.callout.teal  { background:var(--teal-tint);  border-left:4pt solid var(--teal); }
+.callout.gold  { background:var(--gold-tint);  border-left:4pt solid var(--gold); }
+.callout.coral { background:var(--coral-tint); border-left:4pt solid var(--coral); }
+.callout .callout-title {
+  font-family:'Ghaith','DejaVu Sans',sans-serif;
+  font-size: 11pt; margin-bottom:4pt;
+}
+.callout.blue .callout-title{ color:var(--blue);}
+.callout.teal .callout-title{ color:var(--teal);}
+.callout.gold .callout-title{ color:var(--gold);}
+.callout.coral .callout-title{ color:var(--coral);}
+
+.center-eq {
+  text-align:center; margin:10pt 0; font-size:12pt;
+}
+.center-eq .box {
+  display:inline-block; border:1.3pt solid #1c2430; border-radius:6pt;
+  padding:6pt 16pt;
+}
+
+/* ---------- numbered items (examples, mcq, essay) ---------- */
+.num-badge {
+  display:inline-block; width:15pt; height:15pt; line-height:15pt;
+  border-radius:50%; background:var(--coral); color:#fff; text-align:center;
+  font-size:9pt; font-family:'Ghaith','DejaVu Sans',sans-serif; margin-right:6pt;
+  flex-shrink:0;
+}
+.num-badge.navy{ background:var(--blue); }
+.item-row { display:flex; align-items:flex-start; margin: 5pt 0; }
+.item-row .content { flex:1; }
+
+/* ---------- fractions & math helpers ---------- */
+.frac { display:inline-block; vertical-align:middle;
+  text-align:center; margin:0 2pt; font-size:0.92em; line-height:1.15; position:relative; top:3pt;}
+.frac .num{ display:block; border-bottom:1pt solid #1c2430; padding:0 3pt; }
+.frac .den{ display:block; padding:0 3pt; }
+
+/* ---------- solution steps ---------- */
+.solution-block { margin: 4pt 0 10pt 0; }
+.solution-block .step { margin: 3pt 0; }
+
+/* ---------- graphs (example 3) ---------- */
+.graph-cell img { width:100%; height:auto; }
+.graph-cell .glabel {
+  font-family:'Ghaith','DejaVu Sans',sans-serif; font-size:10.5pt; color:var(--blue); margin-bottom:2pt;
+}
+
+/* ---------- MCQ ---------- */
+.section-title {
+  font-family:'Ghaith','DejaVu Sans',sans-serif; font-size:15pt; color:var(--blue);
+  margin: 4pt 0 12pt 0; padding-bottom:5pt; border-bottom: 1.5pt solid var(--blue-tint);
+}
+.mcq-item { break-inside: avoid; margin-bottom: 12pt; padding-bottom:10pt; border-bottom: 0.75pt solid #e3e6ea; }
+.mcq-q { display:flex; align-items:flex-start; margin-bottom:6pt;}
+.mcq-q .qtext{ flex:1; }
+.opt .letter {
+  display:inline-block; width:13pt; height:13pt; line-height:13pt; border-radius:50%;
+  background:var(--coral); color:#fff; text-align:center; font-size:8pt;
+  font-family:'Ghaith','DejaVu Sans',sans-serif; margin-right:5pt; vertical-align:middle;
+}
+.mcq-graph { margin-left:21pt; margin-top:4pt; width:150pt;}
+.mcq-graph img{ width:100%; height:auto; }
+
+/* ---------- essay ---------- */
+.essay-item { break-inside: avoid; margin-bottom: 14pt; }
+.essay-q { display:flex; align-items:flex-start; margin-bottom:6pt; }
+.essay-q .qtext{ flex:1; }
+.answer-box {
+  border: 1pt dashed #b9c0c9; border-radius:6pt; background: rgba(0,0,0,0.012);
+  margin-left:21pt; height: 46pt;
+}
+.answer-box.tall{ height: 78pt; }
+
+.gap-note {
+  font-family:'InkFree','DejaVu Sans',sans-serif; font-style:italic; color:#8b93a0;
+  font-size:9.3pt; text-align:center; margin: 10pt 0 4pt 0;
+}
+
+.page-break { break-before: page; }
+sup { font-size: 0.68em; }
+
+/* ---------- geometry figures (Lesson 3-2) ---------- */
+.fig-block { text-align:center; margin:10pt 0 14pt 0; }
+.fig-block img { width:230pt; height:auto; }
+.mcq-fig { margin-left:21pt; margin-top:6pt; }
+.mcq-fig img { width:165pt; height:auto; }
+.essay-fig { text-align:center; margin:6pt 0; }
+.essay-fig img { width:180pt; height:auto; }
