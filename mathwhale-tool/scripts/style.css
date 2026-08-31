@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap');
 @font-face { font-family:'Ghaith'; src: url('../assets/fonts/GHAITHSANS-BLACK.OTF'); }
 @font-face { font-family:'InkFree'; src: url('../assets/fonts/INKFREE.TTF'); }
-
 @page {
   size: 595.5pt 850.08pt;
   margin: 76pt 50pt 84pt 45pt;
@@ -9,7 +9,7 @@
 * { box-sizing: border-box; }
 
 body {
-  font-family: 'InkFree','DejaVu Sans',sans-serif;
+  font-family: 'Balsamiq Sans', cursive;
   font-size: 11.3pt;
   line-height: 1.55;
   color: #1c2430;
